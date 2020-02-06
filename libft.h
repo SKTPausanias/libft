@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:20:19 by mlaplana          #+#    #+#             */
-/*   Updated: 2019/12/06 18:14:27 by mlaplana         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:15:18 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <fcntl.h>
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -68,48 +65,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 		void (*del)(void *));
-typedef struct		s_flags
-{
-	int point;
-	int ast;
-	int ast2;
-	int zero;
-	int number;
-	int number2;
-	int plus;
-	int space;
-	int hashtag;
-	int com;
-	int dev;
-	int astval1;
-	int astval2;
-}					t_flags;
 
-int					print_spaces(t_flags *iflags, int len);
-char				*fill_zeros(t_flags *iflags, int len);
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-char				*ft_itoa_unsigned(unsigned int n);
-char				*ft_itoa_lowhex(unsigned long n);
-char				*ft_itoa_uphex(unsigned long n);
-int					print_c(va_list argptr, t_flags *iflags);
-int					print_s(va_list argptr, t_flags *iflags);
-int					print_p(va_list argptr, t_flags *iflags);
-int					print_di(va_list argptr, t_flags *iflags);
-int					print_u(va_list argptr, t_flags *iflags);
-int					print_x(va_list argptr, t_flags *iflags);
-int					print_mayusx(va_list argptr, t_flags *iflags);
-void				print_n(va_list argptr, t_flags *iflags);
-int					check_flags(char *src, int i, t_flags *iflags);
-int					print_else(t_flags *iflags, char c);
-char				*cond_aux(t_flags *iflags, char *s);
-int					fill_zeros2(t_flags *iflags, int len);
-int					printear(t_flags *iflags, char *s);
-int					ft_printf(const char *src, ...);
-int					get_next_line(int fd, char **line);
-
-#endif
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 32
 #endif
